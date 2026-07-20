@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "zesty",
-    "slug": "zesty",
+    "name": "ChIA Fit",
+    "slug": "chia-fit",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "zesty",
+    "scheme": "chiafit",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -13,19 +13,33 @@
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#ffffff",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.VIBRATE",
+        "android.permission.POST_NOTIFICATIONS"
+      ],
+      "package": "com.hashiko.chiafit"
     },
     "web": {
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      ["expo-notifications", {
+        "icon": "./assets/images/icon.png",
+        "color": "#22C55E",
+        "sounds": []
+      }],
+      "expo-font",
       "expo-router",
       [
         "expo-splash-screen",
@@ -39,17 +53,22 @@
           }
         }
       ],
-      "expo-barcode-scanner",
       [
         "expo-camera",
         {
-          "cameraPermission": "Zesty necesita acceso a tu cámara para escanear códigos de barras de alimentos."
+          "cameraPermission": "ChIA Fit necesita acceso a tu cámara para fotografiar etiquetas nutricionales."
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "21b87bb9-2293-4838-8361-06ead107ea7d"
+      }
     }
   }
 }
