@@ -1,5 +1,4 @@
-import { useColorScheme } from 'react-native';
-import { useContext, createContext } from 'react';
+import { useTheme } from '@/contexts/theme-context';
 
 export const darkColors = {
   background: '#080B10',
@@ -80,7 +79,6 @@ export const lightColors = {
 export type AppColors = typeof darkColors;
 
 export function useColors(): AppColors {
-  const { useTheme } = require('@/contexts/theme-context');
   const { colors } = useTheme();
   return colors;
 }

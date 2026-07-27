@@ -111,7 +111,7 @@ export default function HomeScreen() {
 
   if (!fontsLoaded || isLoading) {
     return (
-      <SafeAreaView style={styles.centered}>
+      <SafeAreaView style={[styles.centered, { backgroundColor: c.background }]}>
         <ActivityIndicator size="large" color={GREEN} />
       </SafeAreaView>
     );
@@ -126,7 +126,7 @@ export default function HomeScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={[styles.container, { backgroundColor: c.background }]}>
       <StatusBar style="light" />
       <ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.scroll}>
 

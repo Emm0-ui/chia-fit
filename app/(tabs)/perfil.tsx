@@ -75,9 +75,14 @@ export default function PerfilScreen() {
 
         {/* Avatar */}
         <View style={{ alignItems: 'center', gap: 12, paddingVertical: 8 }}>
-          <View style={{ width: 80, height: 80, borderRadius: 24, backgroundColor: c.green, alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ fontSize: 32, fontFamily: 'PlusJakartaSans_700Bold', color: '#fff' }}>{inicial}</Text>
-          </View>
+          <Pressable onPress={() => router.push('/editar-perfil')} style={{ position: 'relative' }}>
+            <View style={{ width: 80, height: 80, borderRadius: 24, backgroundColor: c.green, alignItems: 'center', justifyContent: 'center' }}>
+              <Text style={{ fontSize: 32, fontFamily: 'PlusJakartaSans_700Bold', color: '#fff' }}>{inicial}</Text>
+            </View>
+            <View style={{ position: 'absolute', bottom: 0, right: 0, width: 26, height: 26, borderRadius: 13, backgroundColor: c.green, borderWidth: 2, borderColor: c.background, alignItems: 'center', justifyContent: 'center' }}>
+              <Ionicons name='pencil' size={12} color='#fff' />
+            </View>
+          </Pressable>
           {nombre ? <Text style={{ fontSize: 22, fontFamily: 'PlusJakartaSans_700Bold', color: c.textPrimary }}>{nombre}</Text> : null}
           <Text style={{ fontSize: 14, color: c.textMuted }}>{email}</Text>
           {objetivo ? (
